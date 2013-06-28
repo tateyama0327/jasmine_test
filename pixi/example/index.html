@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>pixi.js example 1</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #000000;
+		}
+	</style>
+	<script src="pixi.js"></script>
+</head>
+<body>
+	<script>
+	
+	// create an new instance of a pixi stage
+	var stage = new PIXI.Stage(0x66FF99);
+	var NUMBER = 100;
+	var scWid = screen.width;
+	var scHei = screen.height;
+	//webGL有効の時のみ、webGLレンダラー
+	var renderer = PIXI.autoDetectRenderer(500, 500);
+	
+	// add the renderer view element to the DOM
+	document.body.appendChild(renderer.view);
+	
+	requestAnimFrame( animate );
+
+	// create a texture from an image path
+	var texture = PIXI.Texture.fromImage("naruge_thum.png");
+	
+	var text = new PIXI.Text('NARUGE',{fill:'#FFF'});
+	var bunny =[];
+	for(i=0; i < NUMBER; i++){
+		bunny[i] = new PIXI.Sprite(texture);
+		//画像の支点
+		bunny[i].anchor.x = 0.5;
+		bunny[i].anchor.y = 0.5;
+		//配置場所
+		bunny[i].position.x = 250;
+		bunny[i].position.y = 240;
+		stage.addChild(bunny[i]);
+	}
+
+	//テキスト
+	text.position.x = 200;
+	text.position.y = 230;
+	stage.addChild(text);
+
+	function animate() {
+	
+	    requestAnimFrame( animate );
+    	for(i=0; i < bunny.length; i++){
+    		bunny[i].rotation += Math.random()*3;
+
+    		// bunny[i].position.x += Math.random()*10;
+    		// bunny[i].position.y += Math.random()*10;
+
+    	}
+
+	    // just for fun, lets rotate mr rabbit a little
+	    // bunny.position.x += 5;
+	    // bunny.position.y += 5;
+	    // render the stage   
+	    renderer.render(stage);
+	}
+
+	</script>
+
+	</body>
+</html>

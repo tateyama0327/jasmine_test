@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>めも</title>
+<meta name="Description" content="メモ帳アプリ" />
+<meta name="Keywords"  content="メモ,付箋" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <!-- header(ナビゲーション) -->
+  <header id="header">
+    <nav>
+      <div id="topMenu">
+        <h1>メモ帳<span id="stickNum"></span></h1>
+      </div>
+      <div id="otherMenu">
+        <p><span id="back">ù</span></p>
+        <h1>sampleText</h1>
+      </div>
+      <div id="garbageMenu">
+        <p><span id="garbageback">ù</span></p>
+        <h1>sampleText</h1>
+      </div>
+    </nav>
+  </header>
+  <!-- wrapper(全体を内包) -->
+  <div id="wrapper">
+    <!-- top -->
+    <section id="top">
+      <textarea id="text" placeholder="なにか書いてください" ></textarea>
+      <button class="btn" type="">送信</button>
+      <p>ダブルクリックで編集</p>
+      <div id="toplist"></div>
+    </section>
+  </div>
+
+
+<script type="text/javascript" src="js/lib/require.js" data-main="js/index"></script>
+
+<!-- テンプレ -->
+<script id="item-template" type="text/x-jsrender">
+    <p>{{>title}}</p>
+    <input class="titleInput" type="text" value="{{>title}}">
+    <button id="deleteBtn">削除</button>
+</script>
+
+
+
+  </body>
+</html>
+

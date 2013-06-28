@@ -1,0 +1,226 @@
+*{
+	padding: 0;
+	margin: 0;
+    font-family: 'lucida grande',tahoma,verdana,arial,"hiragino kaku gothic pro",meiryo,"ms pgothic",sans-serif;
+    list-style: none;
+}
+/*url('http://minegishi.mods.jp/font/CONDENSEicon.woff') format('woff')*/
+@font-face {
+    font-family: 'CONDENSEicon';
+    src:url('http://minegishi.mods.jp/font/CONDENSEicon.otf') format('opentype');
+}
+html,body{
+    height: 100%;
+}
+body{
+    background-color: #eee;
+}
+/* リンク色設定 */
+a:link { text-decoration: none; }
+a:visited { text-decoration: none;  }
+a:hover { text-decoration: none;  }
+a:active { text-decoration: none;  }
+
+/*--------全体設定------------------------------------------------*/
+#wrapper{
+    width: 100%;
+    margin: 0 auto;
+}
+header{
+    color: #FFF;
+    padding: 5px;
+    height: 42px;
+    background-color: #ff7e7e;
+    -webkit-box-shadow: 0 0 13px rgba(4,0,0,.67), inset 0 0 0 2px rgba(112,84,76,.75);
+    border: solid 1px #372722;
+    background-image: -webkit-linear-gradient(bottom, #4a352e, #6d4e44 93%, #866255);
+    background-image: linear-gradient(to top, #4a352e, #6d4e44 93%, #866255);
+}
+
+header p{
+    float: right;
+    height: 36px;
+}
+header h1{
+    float: left;
+    font-size: 20px;
+    padding-left: 10px;
+    font-weight: bold;
+    line-height: 39px;
+}
+header p{
+    text-align: right;
+    padding-right: 5px;
+}
+header p span{
+    font-family:'CONDENSEicon';
+    font-size: 30px;
+}
+section{
+    background-color: #FFF;
+    min-height: 200px;
+    border-radius: 0px 0px 10px 10px;
+    -webkit-box-shadow: 0 0 13px rgba(4,0,0,.67);
+    padding: 10px;
+    background-image:
+        -webkit-linear-gradient(
+            transparent 95%,
+            rgba(0, 144, 255, .2) 50%,
+            rgba(0, 144, 255, .2)),
+        -webkit-linear-gradient(
+            0deg, transparent 95%,
+            rgba(0, 144, 255, .2) 50%,
+            rgba(0, 144, 255, .2)
+            );
+    background-size: 20px 20px;
+    background-repeat: repeat;
+}
+section .sticky{
+    min-height: 49px;
+    background-color: #fcf9b3;
+    padding: 10px;
+    word-wrap: break-word;
+    margin-bottom: 10px;
+    border-radius: 2px 2px 120px 2px / 2px 2px 6px 2px;
+    -webkit-box-shadow: 2px 1px 3px rgba(142,107,79,.38), inset 0 0 0 2px rgba(255,254,220,.90);
+}
+section .sticky span{
+    display: block;
+    text-align: right;
+    font-size: 12px;
+}
+section .sticky:last-child{
+    margin-bottom: 0px;
+}
+textarea{
+    width: 100%;
+    min-height: 100px;
+    font-size: 20px;
+    resize:none;
+    border: none;
+    background-color: #fcf9b3;
+}
+.button{
+    width: 100%;
+    min-height: 40px;
+    padding-top: 10px;
+    background-color: #5b5b5b;
+    text-align: center;
+    -webkit-box-shadow: 2px 1px 3px rgba(142,107,79,.38), inset 0 0 0 2px rgba(255,255,255,.90);
+}
+footer{
+    font-size: 10px;
+    text-align: center;
+    color: #696969;
+    padding: 10px 0;
+}
+
+#otherMenu p,#garbageMenu p{
+    float: left;
+}
+/*--------backbornStyle------------------------------------------------*/
+
+.sticky input{
+    display: none;
+}
+
+.editing p{
+    display: none;
+}
+
+.editing input{
+    display: block;
+}
+
+/*--------garbageBtn------------------------------------------------*/
+#topMenu #garbageBtn{
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(0,0,0,0.5);
+    padding: 10px;
+    border-radius: 5px 0px 0px 0px;
+}
+/*--------updateBtn------------------------------------------------*/
+#topMenu #updateBtn{
+    padding-right:10px;
+    display: none;
+}
+#topMenu #updateBtn span{
+    font-family: 'lucida grande',tahoma,verdana,arial,"hiragino kaku gothic pro",meiryo,"ms pgothic",sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    background-color: #f00;
+    border: 2px solid #fff;
+    padding: 5px 7px;
+    border-radius: 20px;
+    position: relative;
+    top:-10px;
+}
+/*--------g-navi------------------------------------------------*/
+#garbageMenu{
+    display: none;
+}
+#otherMenu{
+    display: none;
+}
+/*--------top------------------------------------------------*/
+#top .sticky{
+}
+#top .sticky p{
+    -webkit-text-overflow: ellipsis;
+}
+
+
+/*--------detail------------------------------------------------*/
+#detail{
+    display: none;
+    min-height: 100px;
+}
+#detail .sticky{
+    min-height: 100px;
+}
+/*--------news------------------------------------------------*/
+#new{
+    color: #FFF;
+    font-size: 20px;
+    font-weight: bold;
+    display: none;
+}
+#new .button{
+    background-color: #bcbcbc;    
+}
+/*--------delete------------------------------------------------*/
+#delete{
+    display: none;
+    min-height: 100px;
+}
+#delete .sticky{
+    overflow: hidden;
+}
+#delete .sticky p{
+    float: left;
+}
+#delete p.deleteBtn{
+    text-align: right;
+    float: right;
+}
+#delete .deleteBtn:after{
+    content: "×";
+    padding: 5px 10px;
+    position: relative;
+    background-color: rgba(74,53,46,0.8);
+    color: #FFF;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: center;
+    line-height: 22px;
+}
+/*--------edit------------------------------------------------*/
+#edit{
+    min-height: 100px;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: bold;
+    display: none;
+}
